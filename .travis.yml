@@ -2,7 +2,9 @@ language: java
 jdk:
 - oraclejdk8
 before_install:
-- export | grep SAUCE_
+- export | grep SAUCE
+- mvn test-compile
+- mvn versions:display-dependency-updates
 script: make run_all_in_parallel
 env:
   global:
